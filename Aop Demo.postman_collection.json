@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "01f80d7d-77d4-4fba-9194-b045944487ce",
+		"name": "Aop Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6354757"
+	},
+	"item": [
+		{
+			"name": "vm",
+			"item": [
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/vm/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vm",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Vm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/vm",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"My Awesome VM\",\r\n    \"size\": 1578,\r\n    \"memory\": 1081,\r\n    \"operatingSystem\": \"Linus\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vm",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one vm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/vm/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vm",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit one",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"My Awesome VM\",\r\n    \"size\": 1578,\r\n    \"memory\": 1081,\r\n    \"operatingSystem\": \"Linux\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/vm/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vm",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "groups",
+			"item": [
+				{
+					"name": "Get all groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/groups",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/groups/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"groups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save one group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hehe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/groups",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit one group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"1 updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/groups/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"groups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/groups/201",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"groups",
+								"201"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
