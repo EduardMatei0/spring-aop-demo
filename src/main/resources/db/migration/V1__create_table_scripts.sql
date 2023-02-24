@@ -13,6 +13,14 @@ CREATE TABLE if not exists "virtual_machines" (
                           "updated" timestamp   NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS "audit_external" (
+    "id" serial primary key,
+    "method_name" varchar not null,
+    "req_body" text,
+    "response" text,
+    "status_code" integer
+);
+
 CREATE TABLE if not exists "users" (
                                         "id" serial primary key,
                                         "name" varchar   NOT NULL,

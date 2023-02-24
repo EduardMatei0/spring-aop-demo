@@ -1,4 +1,4 @@
-package com.example.aop.aop;
+package com.example.aop.aop_final;
 
 import com.example.aop.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -7,23 +7,26 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Slf4j
 @Aspect
+@Order(1)
 @Component
 @RequiredArgsConstructor
-public class AzureVMAspect {
+public class LoggingServiceAspect {
 
     private final UserService userService;
 
     @Pointcut("execution(* com.example.aop.service.AzureVirtualMachinesService.*One(..))")
-    private void crudPointcut() {};
+    private void pointcutServiceExpression() {};
 
-    @Before("crudPointcut()")
-    public void loggingUser(JoinPoint joinPoint) {
+    @Before("pointcutServiceExpression()")
+    public void loggingAspectMethod(JoinPoint joinPoint) {
+        log.info("Calling @Before on method {}", joinPoint.getSignature().getName());
         var currentUser = userService.getCurrentUser();
         log.info("User with id {} and name {} is calling the method {}", currentUser.getId(), currentUser.getName(), joinPoint.getSignature().getName());
 

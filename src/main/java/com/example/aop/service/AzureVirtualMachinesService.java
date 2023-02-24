@@ -1,9 +1,11 @@
 package com.example.aop.service;
 
 import com.example.aop.json.AzureMachineDTO;
+import com.example.aop.json.ResourceGroups;
 import com.example.aop.model.AzureVirtualMachines;
 import com.example.aop.repository.AzureVirtualMachinesRepository;
 import lombok.RequiredArgsConstructor;
+import net.bytebuddy.utility.RandomString;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -15,12 +17,12 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
+@Transactional
 public class AzureVirtualMachinesService {
 
     private final AzureVirtualMachinesRepository azureVirtualMachinesRepository;
-    private final ExternalApiService externalApiService;
+    private final ConnectorService connectorService;
 
     public List<AzureMachineDTO> getAll(int page, int limit) {
         return azureVirtualMachinesRepository.findAll(PageRequest.of(page, limit))
@@ -36,13 +38,20 @@ public class AzureVirtualMachinesService {
     }
 
     public AzureMachineDTO saveOne(AzureMachineDTO azureMachineDTO) {
+        // fake calling external api
+        connectorService.callAzureDirectoryAndCreateResource(ResourceGroups
+                .builder()
+                .name(RandomString.make())
+                .uuid(UUID.randomUUID().toString())
+                .build());
+
+        // saving new virtual machine
         return new AzureMachineDTO(azureVirtualMachinesRepository.save(convertFromDTO(azureMachineDTO)));
     }
 
     public AzureMachineDTO editOne(AzureMachineDTO azureMachineDTO, Integer id) {
         var virtualMachine = azureVirtualMachinesRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Azure machine with id %s not present", id)));
-        virtualMachine.setAzureGroupId(externalApiService.callExternalApiAndGetGroups(id).getId());
         virtualMachine.setMemory(azureMachineDTO.getMemory());
         virtualMachine.setName(azureMachineDTO.getName());
         virtualMachine.setOperatingSystem(azureMachineDTO.getOperatingSystem());
