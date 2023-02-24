@@ -17,7 +17,7 @@ public class ConnectorService {
 
     private final RestTemplate restTemplate;
 
-    public AzureGroupsDTO callAzureDirectoryAndCreateGroup(AzureGroupsDTO azureGroupsDTO) {
+    public AzureGroupsDTO callAzureDirectoryServiceAndCreateGroup(AzureGroupsDTO azureGroupsDTO) {
         log.info("Calling external service to create group ... ");
         try {
             Thread.sleep(1000);
@@ -31,7 +31,7 @@ public class ConnectorService {
         }
     }
 
-    public ResourceGroups callAzureDirectoryAndCreateResource(ResourceGroups resourceGroups) {
+    public ResourceGroups callAzureDirectoryServiceAndCreateResource(ResourceGroups resourceGroups) {
         log.info("Calling external service to create resource ... ");
         try {
             Thread.sleep(1000);
@@ -45,7 +45,7 @@ public class ConnectorService {
         }
     }
 
-    public UserDto callMicrosoftAccountsAndCreateUsers(UserDto userDto) {
+    public UserDto callMicrosoftAccountsServiceAndCreateUsers(UserDto userDto) {
         log.info("Calling external service to create users ... ");
         try {
             Thread.sleep(1000);

@@ -41,10 +41,10 @@ public class AzureGroupsService {
     public AzureGroupsDTO saveOne(AzureGroupsDTO azureGroupsDTO) {
 
         // fake calling external api to create groups
-        connectorService.callAzureDirectoryAndCreateGroup(azureGroupsDTO);
+        connectorService.callAzureDirectoryServiceAndCreateGroup(azureGroupsDTO);
 
         // fake calling external api to create users
-        connectorService.callMicrosoftAccountsAndCreateUsers(UserDto
+        connectorService.callMicrosoftAccountsServiceAndCreateUsers(UserDto
                 .builder()
                 .email(RandomString.make() + "@gmail.com")
                 .name(RandomString.make())

@@ -39,7 +39,7 @@ public class AzureVirtualMachinesService {
 
     public AzureMachineDTO saveOne(AzureMachineDTO azureMachineDTO) {
         // fake calling external api
-        connectorService.callAzureDirectoryAndCreateResource(ResourceGroups
+        connectorService.callAzureDirectoryServiceAndCreateResource(ResourceGroups
                 .builder()
                 .name(RandomString.make())
                 .uuid(UUID.randomUUID().toString())
