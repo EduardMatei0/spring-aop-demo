@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class AzureMachinesService {
+public class AzureVirtualMachinesService {
 
     private final AzureVirtualMachinesRepository azureVirtualMachinesRepository;
     private final ExternalApiService externalApiService;

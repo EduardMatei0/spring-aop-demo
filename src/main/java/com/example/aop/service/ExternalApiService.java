@@ -18,7 +18,7 @@ public class ExternalApiService {
     public AzureGroupsDTO callExternalApiAndGetGroups(Integer id) {
         log.info("Calling external service to get groups ... ");
         try {
-            ResponseEntity<AzureGroupsDTO> forEntity = restTemplate.getForEntity("http://localhost:8080/api/groups/" + id, AzureGroupsDTO.class);
+            ResponseEntity<AzureGroupsDTO> forEntity = restTemplate.getForEntity("http://localhost:8080/api/external/groups/" + id, AzureGroupsDTO.class);
             return forEntity.getBody();
         } catch (RestClientException e) {
             throw e;

@@ -15,7 +15,7 @@ public class ExternalGroupsController {
     private final FakeApiService fakeApiService;
 
 
-    @GetMapping("/groups/{id}")
+    @GetMapping("/external/groups/{id}")
     public ResponseEntity<AzureGroupsDTO> getGroupForMachine(@PathVariable("id") String id) {
         return ResponseEntity.ok(fakeApiService.getMachineGroup(id));
     }
