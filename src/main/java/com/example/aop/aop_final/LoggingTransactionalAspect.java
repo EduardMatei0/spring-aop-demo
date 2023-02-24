@@ -9,9 +9,9 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Aspect
-@Order(2)
-@Component
+//@Aspect
+//@Order(2)
+//@Component
 public class LoggingTransactionalAspect {
 
     @Pointcut("@annotation(javax.transaction.Transactional)")

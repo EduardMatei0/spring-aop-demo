@@ -13,9 +13,9 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Slf4j
-@Aspect
-@Order(1)
-@Component
+//@Aspect
+//@Order(1)
+//@Component
 @RequiredArgsConstructor
 public class LoggingServiceAspect {
 

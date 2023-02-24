@@ -11,8 +11,8 @@ import java.time.Duration;
 import java.time.Instant;
 
 @Slf4j
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class PerformanceAspect {
 
     @Pointcut("execution(* com.example.aop.*.*.*(..))")

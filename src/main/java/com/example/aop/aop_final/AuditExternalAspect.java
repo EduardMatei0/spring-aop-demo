@@ -14,8 +14,8 @@ import org.springframework.web.client.HttpStatusCodeException;
 
 
 @Slf4j
-@Aspect
-@Component
+//@Aspect
+//@Component
 @RequiredArgsConstructor
 public class AuditExternalAspect {
 
