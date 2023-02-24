@@ -49,7 +49,7 @@ public class ConnectorService {
         log.info("Calling external service to create users ... ");
         try {
             Thread.sleep(1000);
-            ResponseEntity<UserDto> forEntity = restTemplate.postForEntity("http://localhost:8080/api/external/userszzz", userDto, UserDto.class);
+            ResponseEntity<UserDto> forEntity = restTemplate.postForEntity("http://localhost:8080/api/external/users", userDto, UserDto.class);
             return forEntity.getBody();
         } catch (HttpStatusCodeException e) {
             throw e;
